@@ -38,7 +38,7 @@ def logout():
 def main():
     db_session.global_init("db/blogs.db")
     app.register_blueprint(news_api.blueprint)
-    app.run()
+    app.run(host='0.0.0.0', port=5000) # 0.0.0.0 - приложение принимает соединение на всех адресах хоста
 
 
 @app.route('/news', methods=['GET', 'POST'])
